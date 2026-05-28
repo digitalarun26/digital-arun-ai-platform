@@ -1,0 +1,183 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="yt-page">
+
+<!-- LEFT SIDE -->
+
+<div class="yt-left">
+
+<div class="tool-label">
+📺 AI Video Analyzer
+</div>
+
+<h1 class="yt-title">
+
+Summarize
+YouTube Videos
+With AI
+
+</h1>
+
+<p class="yt-description">
+
+Paste any YouTube URL and generate
+professional AI-powered summaries,
+key insights and action items instantly.
+
+</p>
+
+<div class="yt-features">
+
+<div class="yt-feature">
+⚡ Instant Transcript Analysis
+</div>
+
+<div class="yt-feature">
+🧠 AI Generated Summaries
+</div>
+
+<div class="yt-feature">
+📌 Key Insights & Action Items
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT SIDE -->
+
+<div class="yt-right">
+
+<div class="yt-card">
+
+<div class="card-header">
+
+<div class="header-dots">
+
+<div class="dot red"></div>
+<div class="dot yellow"></div>
+<div class="dot green"></div>
+
+</div>
+
+<h3>YouTube Summary AI</h3>
+
+</div>
+
+<div class="yt-input-box">
+
+<i class="fa-brands fa-youtube"></i>
+
+<input
+type="text"
+id="youtube_url"
+placeholder="Paste YouTube Video URL"
+/>
+
+</div>
+
+<button onclick="generateSummary()">
+
+⚡ Generate AI Summary
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- LOADING -->
+
+<section class="loading-section hidden" id="loading">
+
+<div class="premium-loader"></div>
+
+<h2>Analyzing YouTube Video...</h2>
+
+<p>
+Generating AI-powered insights
+</p>
+
+</section>
+
+<!-- DASHBOARD -->
+
+<section class="yt-dashboard hidden" id="dashboard">
+
+<div class="dashboard-top">
+
+<h1>AI Analysis Dashboard</h1>
+
+<div class="dashboard-actions">
+
+<button onclick="showTab('summary-tab')">
+Summary
+</button>
+
+<button onclick="showTab('keypoints-tab')">
+Key Points
+</button>
+
+<button onclick="showTab('actions-tab')">
+Action Items
+</button>
+
+</div>
+
+</div>
+
+<!-- SUMMARY -->
+
+<div class="tab-content active" id="summary-tab">
+
+<div id="short-summary"></div>
+
+<div id="detailed-summary"></div>
+
+</div>
+
+<!-- KEY POINTS -->
+
+<div class="tab-content" id="keypoints-tab">
+
+<div id="key-points"></div>
+
+</div>
+
+<!-- ACTION ITEMS -->
+
+<div class="tab-content" id="actions-tab">
+
+<div id="action-items"></div>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="yt-cta">
+
+<h1>
+
+Follow
+<a
+href="https://www.instagram.com/digitalarun26/?hl=en"
+target="_blank"
+>
+@digitalarun26
+</a>
+
+for more AI tools 🚀
+
+</h1>
+
+</section>
+
+<script src="{{ url_for('static', filename='youtube-summary.js') }}"></script>
+
+{% endblock %}

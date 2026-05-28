@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DIGITAL ARUN AI PLATFORM</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+</head>
+<body>
+
+<div class="bg-glow"></div>
+
+<nav>
+
+<div class="logo">
+DIGITAL ARUN
+</div>
+
+<div class="nav-links">
+<a href="/">Home</a>
+<a href="/tools">AI Tools</a>
+<a href="/about">About</a>
+<a href="/contact">Contact</a>
+</div>
+
+</nav>
+
+{% block content %}
+{% endblock %}
+
+<footer>
+
+<h3>DIGITAL ARUN AI PLATFORM</h3>
+
+<p>
+Build Faster With AI 🚀
+</p>
+
+</footer>
+
+<script src="{{ url_for('static', filename='main.js') }}"></script>
+
+</body>
+</html>

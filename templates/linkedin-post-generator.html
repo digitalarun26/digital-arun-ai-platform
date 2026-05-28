@@ -1,0 +1,210 @@
+```html
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="linkedin-page">
+
+<div class="linkedin-left">
+
+<div class="tool-label">
+💼 LinkedIn AI Writer
+</div>
+
+<h1 class="linkedin-title">
+
+Create Viral
+LinkedIn Posts
+With AI
+
+</h1>
+
+<p class="linkedin-description">
+
+Generate high-performing LinkedIn posts
+for creators, founders, professionals
+and marketers instantly.
+
+</p>
+
+<div class="linkedin-features">
+
+<div class="linkedin-feature">
+⚡ AI Powered Hooks
+</div>
+
+<div class="linkedin-feature">
+🔥 Viral Post Structure
+</div>
+
+<div class="linkedin-feature">
+📈 Engagement Optimized
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="linkedin-right">
+
+<div class="linkedin-card">
+
+<div class="card-header">
+
+<div class="header-dots">
+<div class="dot red"></div>
+<div class="dot yellow"></div>
+<div class="dot green"></div>
+</div>
+
+<h3>LinkedIn Post Generator</h3>
+
+</div>
+
+<textarea
+id="topic"
+placeholder="Enter your LinkedIn post idea..."
+></textarea>
+
+<input
+type="text"
+id="audience"
+placeholder="Target Audience"
+/>
+
+<select id="tone">
+
+<option>Professional</option>
+<option>Inspirational</option>
+<option>Storytelling</option>
+<option>Casual</option>
+<option>Bold</option>
+<option>Motivational</option>
+<option>Thought Leadership</option>
+<option>Startup Founder</option>
+<option>Corporate</option>
+
+</select>
+
+<select id="length">
+
+<option>Short</option>
+<option>Medium</option>
+<option>Long</option>
+
+</select>
+
+<select id="cta">
+
+<option>Ask Question</option>
+<option>Invite Comments</option>
+<option>Promote Service</option>
+<option>Follow Request</option>
+<option>Networking</option>
+
+</select>
+
+<input
+type="number"
+id="hashtags"
+placeholder="Hashtag Count"
+/>
+
+<div class="linkedin-actions">
+
+<button onclick="generateLinkedInPost()">
+⚡ Generate Post
+</button>
+
+<button onclick="clearLinkedInForm()">
+🗑 Clear
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- LOADING -->
+
+<section id="linkedin-loading"
+class="loading-section hidden">
+
+<div class="premium-loader"></div>
+
+<h2>Generating Viral LinkedIn Post...</h2>
+
+<p>
+AI is writing your content
+</p>
+
+</section>
+
+<!-- OUTPUT -->
+
+<section class="linkedin-output-section">
+
+<div class="linkedin-output-container">
+
+<div class="output-top">
+
+<h2>Generated LinkedIn Post</h2>
+
+<div class="output-actions">
+
+<button onclick="copyLinkedInPost()">
+Copy
+</button>
+
+<button onclick="downloadLinkedInPost()">
+Download
+</button>
+
+<button onclick="generateLinkedInPost()">
+Regenerate
+</button>
+
+</div>
+
+</div>
+
+<div class="stats-bar">
+
+<div id="char-count">
+Characters: 0
+</div>
+
+<div id="word-count">
+Words: 0
+</div>
+
+<div id="reading-time">
+Reading Time: 0 min
+</div>
+
+</div>
+
+<div id="linkedin-output"
+class="linkedin-output-box">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- TOAST -->
+
+<div id="toast" class="toast">
+Copied Successfully 🚀
+</div>
+
+<script src="{{ url_for('static', filename='linkedin-post-generator.js') }}"></script>
+
+{% endblock %}
+```

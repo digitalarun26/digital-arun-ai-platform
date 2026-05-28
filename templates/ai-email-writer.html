@@ -1,0 +1,203 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="email-page">
+
+<div class="email-left">
+
+<div class="tool-label">
+✉️ AI Email Generator
+</div>
+
+<h1 class="email-title">
+Write Professional Emails With AI
+</h1>
+
+<p class="email-description">
+
+Generate modern, professional and highly effective
+emails instantly using AI.
+
+</p>
+
+<div class="email-features">
+
+<div class="email-feature">
+⚡ Instant AI Email Generation
+</div>
+
+<div class="email-feature">
+🎯 Multiple Tone Options
+</div>
+
+<div class="email-feature">
+📱 Mobile Friendly
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT SIDE -->
+
+<div class="email-right">
+
+<div class="email-card">
+
+<div class="card-header">
+
+<div class="header-dots">
+
+<div class="dot red"></div>
+<div class="dot yellow"></div>
+<div class="dot green"></div>
+
+</div>
+
+<h3>AI Email Writer</h3>
+
+</div>
+
+<!-- FORM -->
+
+<div class="input-group">
+
+<label>Email Purpose</label>
+
+<input
+type="text"
+id="purpose"
+placeholder="Ex: Job Application"
+>
+
+</div>
+
+<div class="double-grid">
+
+<div class="input-group">
+
+<label>Tone</label>
+
+<select id="tone">
+
+<option>Professional</option>
+<option>Friendly</option>
+<option>Formal</option>
+<option>Confident</option>
+<option>Persuasive</option>
+
+</select>
+
+</div>
+
+<div class="input-group">
+
+<label>Recipient Type</label>
+
+<select id="recipient">
+
+<option>Client</option>
+<option>Manager</option>
+<option>HR</option>
+<option>Customer</option>
+<option>Professor</option>
+
+</select>
+
+</div>
+
+</div>
+
+<div class="input-group">
+
+<label>Key Points</label>
+
+<textarea
+id="points"
+placeholder="Enter important points..."
+></textarea>
+
+</div>
+
+<button
+onclick="generateEmail()"
+class="generate-btn"
+>
+
+⚡ Generate AI Email
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- OUTPUT SECTION -->
+
+<section class="output-section">
+
+<div class="output-container">
+
+<div class="output-top">
+
+<h2>Generated Email</h2>
+
+<div class="output-actions">
+
+<button onclick="copyEmail()">
+Copy
+</button>
+
+<button onclick="generateEmail()">
+Regenerate
+</button>
+
+</div>
+
+</div>
+
+<div id="loading" class="loading hidden">
+
+<div class="premium-loader"></div>
+
+<p>
+Generating AI Email...
+</p>
+
+</div>
+
+<textarea
+id="output"
+readonly
+placeholder="Your generated email will appear here..."
+></textarea>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="email-cta">
+
+<h1>
+Follow
+<a
+href="https://www.instagram.com/digitalarun26/?hl=en"
+target="_blank"
+>
+@digitalarun26
+</a>
+
+for more AI tools 🚀
+
+</h1>
+
+</section>
+
+<script src="{{ url_for('static', filename='email-writer.js') }}"></script>
+
+{% endblock %}

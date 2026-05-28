@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="grammar-page">
+
+<div class="grammar-left">
+
+<div class="tool-label">
+✍️ Grammar Fixer AI
+</div>
+
+<h1 class="grammar-title">
+
+Fix Grammar
+Like A Pro
+
+</h1>
+
+<p class="grammar-description">
+
+Correct grammar mistakes instantly and improve your writing using AI.
+
+</p>
+
+<div class="grammar-features">
+
+<div class="grammar-feature">
+⚡ Instant Corrections
+</div>
+
+<div class="grammar-feature">
+🧠 AI Improvements
+</div>
+
+<div class="grammar-feature">
+📱 Mobile Responsive
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="grammar-right">
+
+<div class="grammar-card">
+
+<div class="card-header">
+
+<div class="header-dots">
+
+<div class="dot red"></div>
+<div class="dot yellow"></div>
+<div class="dot green"></div>
+
+</div>
+
+<h3>Grammar Fixer</h3>
+
+</div>
+
+<textarea
+id="grammarInput"
+placeholder="Paste your text here..."
+></textarea>
+
+<div class="grammar-stats">
+
+<span id="charCount">
+0 Characters
+</span>
+
+<span id="wordCount">
+0 Words
+</span>
+
+</div>
+
+<div class="grammar-actions">
+
+<button onclick="fixGrammar()">
+⚡ Fix Grammar
+</button>
+
+<button onclick="clearGrammar()">
+🗑 Clear
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- OUTPUT -->
+
+<section class="grammar-output-section">
+
+<div class="grammar-output-container">
+
+<div class="output-top">
+
+<h2>AI Corrected Output</h2>
+
+<div class="output-actions">
+
+<button onclick="copyGrammar()">
+Copy
+</button>
+
+<button onclick="downloadGrammar()">
+Download
+</button>
+
+<button onclick="regenerateGrammar()">
+Regenerate
+</button>
+
+</div>
+
+</div>
+
+<div id="grammar-loading"
+class="loading hidden">
+
+<div class="premium-loader"></div>
+
+<p>
+Fixing Grammar...
+</p>
+
+</div>
+
+<div
+id="grammar-output"
+class="grammar-output-box">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- TOAST -->
+
+<div
+id="toast"
+class="toast">
+
+Copied Successfully
+
+</div>
+
+<script src="{{ url_for('static', filename='grammar-fixer.js') }}"></script>
+
+{% endblock %}

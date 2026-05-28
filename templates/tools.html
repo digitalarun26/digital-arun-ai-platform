@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="page-header">
+
+<h1>AI Tools Hub</h1>
+
+<p>
+Launch modern AI-powered productivity tools.
+</p>
+<br>
+
+<div class="tools-search-wrapper">
+
+<div class="tools-search-box">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+type="text"
+id="toolSearch"
+placeholder="Search AI tools..."
+onkeyup="searchTools()"
+/>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="tools-grid">
+
+<!-- EMAIL WRITER GRID STARTS -->
+
+<div class="tool-card" data-tool="email writer ai">
+
+<div class="tool-badge fa-solid fa-envelope">
+ AI Email Writer
+</div>
+
+<i class="fa-solid fa-envelope"></i>
+
+<h2>AI Email Writer</h2>
+
+<p>
+
+Generate modern professional emails instantly
+using AI technology.
+
+</p>
+
+<div class="video-wrapper">
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QR-tZqiKCrg?si=TNdbkvros38IZRo1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+</div>
+
+<a href="/ai-email-writer">
+Launch Tool
+</a>
+
+</div>
+<!-- EMAIL WRITER GRID ENDS -->
+
+<!-- YOUTUBE SUMMARY GRID STARTS -->
+
+<div class="tool-card" data-tool="youtube summary ai">
+
+<div class="tool-badge fa-brands fa-youtube">
+Youtube Summary AI
+</div>
+
+<i class="fa-brands fa-youtube"></i>
+
+<h2>YouTube Summary AI</h2>
+
+<p>
+
+Paste any YouTube URL and generate instant AI summaries.
+
+</p>
+
+<div class="video-wrapper">
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QR-tZqiKCrg?si=TNdbkvros38IZRo1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<a href="/youtube-summary">
+Launch Tool
+</a>
+
+</div>
+<!-- YOUTUBE SUMMARY GRID ENDS -->
+
+<!-- AI VOICE NOTES GRID STARTS -->
+
+<div class="tool-card" data-tool="voice notes ai">
+
+<div class="tool-badge fa-solid fa-microphone">
+AI Voice Notes
+</div>
+
+<i class="fa-solid fa-microphone"></i>
+
+<h2>Voice Notes AI</h2>
+
+<p>
+
+Convert voice notes into organized AI notes instantly.
+
+</p>
+
+<div class="video-wrapper">
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QR-tZqiKCrg?si=TNdbkvros38IZRo1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+</div>
+
+
+<a href="/voice-notes-ai">
+Launch Tool
+</a>
+
+</div>
+
+<!-- AI VOICE NOTES GRID ENDS -->
+
+<!-- LINKEDIN POST GENERATOR GRID STARTS -->
+
+<div class="tool-card" data-tool="linkedin ai writer">
+
+<div class="tool-badge fa-brands fa-linkedin">
+LinkedIn
+</div>
+
+<i class="fa-brands fa-linkedin"></i>
+
+<h2>LinkedIn AI Writer</h2>
+
+<p>
+Generate viral LinkedIn posts
+with hooks, storytelling,
+CTA and hashtags.
+</p>
+
+<div class="video-wrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/QR-tZqiKCrg?si=TNdbkvros38IZRo1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<a href="/linkedin-post-generator">
+
+Launch Tool
+
+</a>
+
+</div>
+
+<!-- LINKEDIN POST GENERATOR GRID ENDS -->
+
+
+
+
+<!-- Grammar Fixer AI GRID STARTS -->
+
+<div class="tool-card" data-tool="grammar fixer ai">
+
+<div class="tool-badge fa-solid fa-spell-check">
+GRAMMAR FIX
+</div>
+
+<i class="fa-solid fa-spell-check"></i>
+
+<h2>Grammar Fixer AI</h2>
+
+<p>
+Fix grammar mistakes instantly and improve writing professionally using AI.
+</p>
+
+<div class="video-wrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/QR-tZqiKCrg?si=TNdbkvros38IZRo1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<a href="/grammar-fixer">
+
+Launch Tool
+
+</a>
+
+</div>
+
+<!-- Grammar Fixer AI GRID ENDS -->
+
+
+</section>
+
+{% endblock %}	

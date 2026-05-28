@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="voice-page">
+
+<div class="voice-left">
+
+<div class="tool-label">
+🎙️ Voice Note AI
+</div>
+
+<h1 class="voice-title">
+
+Convert Voice Notes
+Into Smart AI Notes
+
+</h1>
+
+<p class="voice-description">
+
+Paste transcript or upload voice note
+and instantly generate organized notes,
+headings, summaries and action items.
+
+</p>
+
+<div class="voice-features">
+
+<div class="voice-feature">
+⚡ AI Powered Notes
+</div>
+
+<div class="voice-feature">
+🧠 Smart Summaries
+</div>
+
+<div class="voice-feature">
+📱 Mobile Responsive
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="voice-right">
+
+<div class="voice-card">
+
+<div class="card-header">
+
+<div class="header-dots">
+
+<div class="dot red"></div>
+<div class="dot yellow"></div>
+<div class="dot green"></div>
+
+</div>
+
+<h3>Voice Notes Summarizer</h3>
+
+</div>
+
+<div class="upload-area">
+
+<input
+type="file"
+id="audioFile"
+accept=".mp3,.wav,.m4a"
+/>
+
+<p>
+Upload Voice Note
+</p>
+
+</div>
+
+<div class="or-divider">
+	<br>
+OR
+</div>
+
+<textarea
+id="transcript"
+placeholder="Paste voice transcript here..."
+></textarea>
+
+<button onclick="generateNotes()">
+
+⚡ Generate AI Notes
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- OUTPUT -->
+
+<section class="voice-output-section">
+
+<div class="voice-output-container">
+
+<div class="output-top">
+
+<h2>Generated Notes</h2>
+
+<div class="output-actions">
+
+<button onclick="copyNotes()">
+Copy
+</button>
+
+</div>
+
+</div>
+
+<div id="voice-loading" class="loading hidden">
+
+<div class="premium-loader"></div>
+
+<p>
+Generating AI Notes...
+</p>
+
+</div>
+
+<div id="voice-output" class="voice-output-box"></div>
+
+</div>
+
+</section>
+
+<script src="{{ url_for('static', filename='voice-notes.js') }}"></script>
+
+{% endblock %}
+
