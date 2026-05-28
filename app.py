@@ -104,6 +104,14 @@ def grammar_fixer():
     )
 
 # ======================================
+# INSTAGRAM CAPTION GENERATOR PAGE
+# ======================================
+
+@app.route('/instagram-caption-ai')
+def instagram_caption_ai():
+    return render_template('instagram-caption-ai.html')
+
+# ======================================
 # EMAIL WRITER API
 # ======================================
 
@@ -504,6 +512,65 @@ def fix_grammar():
         return jsonify({
             "success": True,
             "result": result
+        })
+
+    except Exception as e:
+
+        return jsonify({
+            "success": False,
+            "message": str(e)
+        })
+
+
+# ======================================
+# INSTAGRAM CAPTION GENERATOR API
+# ======================================
+
+@app.route('/generate-caption', methods=['POST'])
+def generate_caption():
+
+    try:
+
+        data = request.json
+
+        topic = data.get('topic')
+        style = data.get('style')
+
+        if not topic:
+            return jsonify({
+                "success": False,
+                "message": "Topic is required"
+            })
+
+        prompt = f"""
+
+        You are an expert Instagram caption writer.
+
+        Generate 5 viral Instagram captions.
+
+        Topic:
+        {topic}
+
+        Caption Style:
+        {style}
+
+        Requirements:
+
+        - Add engaging hooks
+        - Add emojis
+        - Add CTA
+        - Add hashtags
+        - Make captions highly engaging
+        - Make captions mobile friendly
+        - Use spacing properly
+        - Keep captions human-like
+        """
+
+        response = model.generate_content(prompt)
+
+        return jsonify({
+            "success": True,
+            "captions": response.text
         })
 
     except Exception as e:

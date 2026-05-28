@@ -1,0 +1,156 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="caption-page">
+
+<div class="caption-left">
+
+<div class="tool-label">
+📸 Instagram Caption AI
+</div>
+
+<h1 class="caption-title">
+Generate Viral Instagram Captions With AI
+</h1>
+
+<p class="caption-description">
+
+Create scroll-stopping Instagram captions with hooks,
+emojis, CTA lines and hashtags instantly.
+
+</p>
+
+<div class="caption-features">
+
+<div class="caption-feature">
+🔥 Viral Hooks
+</div>
+
+<div class="caption-feature">
+✨ AI Captions
+</div>
+
+<div class="caption-feature">
+📱 Instagram Optimized
+</div>
+
+</div>
+
+</div>
+
+<div class="caption-right">
+
+<div class="caption-card">
+
+<div class="card-header">
+
+<div class="header-dots">
+
+<div class="dot red"></div>
+<div class="dot yellow"></div>
+<div class="dot green"></div>
+
+</div>
+
+<h3>Instagram Caption Generator</h3>
+
+</div>
+
+<textarea
+id="topic"
+placeholder="Enter post topic..."
+></textarea>
+
+<select id="style">
+
+<option>Funny</option>
+<option>Luxury</option>
+<option>Motivational</option>
+<option>Professional</option>
+<option>Aesthetic</option>
+<option>Emotional</option>
+
+</select>
+
+<div class="caption-actions">
+
+<button onclick="generateCaptions()">
+⚡ Generate Captions
+</button>
+
+<button onclick="clearCaptionForm()">
+🗑 Clear
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="caption-output-section">
+
+<div class="caption-output-container">
+
+<div class="output-top">
+
+<h2>Generated Captions</h2>
+
+<div class="output-actions">
+
+<button onclick="copyCaptions()">
+Copy
+</button>
+
+<button onclick="downloadCaptions()">
+Download
+</button>
+
+</div>
+
+</div>
+
+<div id="caption-loading" class="loading hidden">
+
+<div class="premium-loader"></div>
+
+<p>Generating Captions...</p>
+
+</div>
+
+<div class="stats-bar">
+
+<p>
+Characters:
+<span id="char-count">0</span>
+</p>
+
+<p>
+Words:
+<span id="word-count">0</span>
+</p>
+
+</div>
+
+<div
+id="caption-output"
+class="caption-output-box"
+>
+
+</div>
+
+</div>
+
+</section>
+
+<div id="toast" class="toast">
+Copied Successfully 🚀
+</div>
+
+<script src="{{ url_for('static', filename='instagram-caption-ai.js') }}"></script>
+
+{% endblock %}
