@@ -111,6 +111,7 @@ def grammar_fixer():
 def instagram_caption_ai():
     return render_template('instagram-caption-ai.html')
 
+
 # ======================================
 # REEL HOOK AI PAGE
 # ======================================
@@ -120,6 +121,13 @@ def reel_hook_ai():
     return render_template(
         'reel-hook-ai.html'
     )
+
+# ======================================
+# Youtube Title GENERATOR PAGE
+# ======================================
+@app.route('/youtube-title-generator')
+def youtube_title_generator():
+    return render_template('youtube-title-generator.html')
 
 # ======================================
 # EMAIL WRITER API
@@ -655,6 +663,63 @@ def generate_reel_hooks():
             "success": False,
             "message": str(e)
         })
+
+# ======================================
+# YOUTUBE TITLE GENERATOR API
+# ======================================
+
+@app.route('/generate-youtube-titles', methods=['POST'])
+def generate_youtube_titles():
+
+    try:
+
+        data = request.get_json()
+
+        topic = data.get('topic')
+        category = data.get('category')
+        style = data.get('style')
+
+        prompt = f"""
+        You are a professional YouTube growth strategist.
+
+        Generate 10 highly clickable YouTube titles.
+
+        Topic:
+        {topic}
+
+        Category:
+        {category}
+
+        Style:
+        {style}
+
+        Requirements:
+        - SEO optimized
+        - High CTR
+        - Curiosity-driven
+        - Viral style
+        - Human sounding
+        - Add CTR score out of 100 beside each title
+
+        Output format:
+
+        1. Title Here — CTR Score: 95
+        """
+
+        response = model.generate_content(prompt)
+
+        return jsonify({
+            "success": True,
+            "titles": response.text
+        })
+
+    except Exception as e:
+
+        return jsonify({
+            "success": False,
+            "error": str(e)
+        })
+
 
 if __name__ == "__main__":
     app.run(debug=True)

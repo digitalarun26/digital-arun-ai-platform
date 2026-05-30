@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="yt-title-page">
+
+<div class="yt-title-left">
+
+<div class="tool-label">
+🏆 TITLE AI
+</div>
+
+<h1 class="yt-main-title">
+Generate Viral YouTube Titles Instantly
+</h1>
+
+<p class="yt-main-description">
+
+Create highly clickable YouTube titles
+optimized for SEO, CTR and engagement.
+
+</p>
+
+<div class="yt-title-features">
+
+<div class="yt-feature-box">
+⚡ SEO Optimized Titles
+</div>
+
+<div class="yt-feature-box">
+📈 CTR Score Analytics
+</div>
+
+<div class="yt-feature-box">
+🚀 Viral Click Hooks
+</div>
+
+</div>
+
+</div>
+
+<div class="yt-title-right">
+
+<div class="yt-generator-card">
+
+<div class="card-header">
+
+<div class="header-dots">
+<div class="dot red"></div>
+<div class="dot yellow"></div>
+<div class="dot green"></div>
+</div>
+
+<h3>YouTube Title Generator</h3>
+
+</div>
+
+<textarea
+id="videoTopic"
+placeholder="Enter your YouTube video topic..."
+></textarea>
+
+<input
+type="text"
+id="videoCategory"
+placeholder="Video category"
+/>
+
+<select id="titleStyle">
+
+<option value="Viral">Viral</option>
+<option value="SEO">SEO</option>
+<option value="Educational">Educational</option>
+<option value="Curiosity">Curiosity</option>
+<option value="Storytelling">Storytelling</option>
+
+</select>
+
+<div class="stats-row">
+
+<div>
+Characters:
+<span id="charCount">0</span>
+</div>
+
+<div>
+Words:
+<span id="wordCount">0</span>
+</div>
+
+</div>
+
+<div class="generator-actions">
+
+<button onclick="generateTitles()">
+⚡ Generate Titles
+</button>
+
+<button onclick="clearTitles()">
+🗑 Clear
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="yt-title-output-section">
+
+<div class="yt-output-container">
+
+<div class="output-top">
+
+<h2>Generated Titles</h2>
+
+<div class="output-actions">
+
+<button onclick="copyTitles()">
+📋 Copy
+</button>
+
+<button onclick="downloadTitles()">
+⬇ Download
+</button>
+
+<button onclick="generateTitles()">
+🔄 Regenerate
+</button>
+
+</div>
+
+</div>
+
+<div id="titleLoading" class="loading hidden">
+
+<div class="premium-loader"></div>
+
+<p>Generating Viral Titles...</p>
+
+</div>
+
+<div id="titlesOutput" class="yt-title-output-box">
+
+Your AI generated YouTube titles will appear here...
+
+</div>
+
+</div>
+
+</section>
+
+<div id="toast" class="toast">
+Copied Successfully 🚀
+</div>
+
+<script src="{{ url_for('static', filename='youtube-title-generator.js') }}"></script>
+
+{% endblock %}
