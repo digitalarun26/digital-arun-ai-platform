@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="reel-page">
+
+<div class="reel-left">
+
+<div class="tool-label">
+🎬 Reel Hook AI
+</div>
+
+<h1 class="reel-title">
+
+Generate Viral Reel Hooks
+With AI
+
+</h1>
+
+<p class="reel-description">
+
+Create scroll-stopping hooks
+for Instagram reels instantly
+using AI creator psychology.
+
+</p>
+
+<div class="reel-features">
+
+<div class="reel-feature">
+🔥 Viral Hooks
+</div>
+
+<div class="reel-feature">
+🚀 Engagement Optimized
+</div>
+
+<div class="reel-feature">
+📱 Creator Style UI
+</div>
+
+</div>
+
+</div>
+
+<div class="reel-right">
+
+<div class="reel-card">
+
+<div class="card-header">
+
+<div class="header-dots">
+
+<div class="dot red"></div>
+<div class="dot yellow"></div>
+<div class="dot green"></div>
+
+</div>
+
+<h3>Reel Hook Generator</h3>
+
+</div>
+
+<textarea
+id="niche"
+placeholder="Enter niche or topic..."
+></textarea>
+
+<div class="reel-actions">
+
+<button onclick="generateHooks()">
+⚡ Generate Hooks
+</button>
+
+<button onclick="clearHooks()">
+🗑 Clear
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="reel-output-section">
+
+<div class="reel-output-container">
+
+<div class="output-top">
+
+<h2>Generated Hooks</h2>
+
+<div class="output-actions">
+
+<button onclick="copyHooks()">
+📋 Copy
+</button>
+
+<button onclick="downloadHooks()">
+⬇ Download
+</button>
+
+</div>
+
+</div>
+
+<div id="hook-loading"
+class="loading hidden">
+
+<div class="premium-loader"></div>
+
+<p>Generating Viral Hooks...</p>
+
+</div>
+
+<div class="stats-bar">
+
+<p>
+Characters:
+<span id="char-count">0</span>
+</p>
+
+<p>
+Words:
+<span id="word-count">0</span>
+</p>
+
+</div>
+
+<div
+id="hook-output"
+class="reel-output-box"
+>
+
+</div>
+
+</div>
+
+</section>
+
+<div id="toast" class="toast">
+Copied Successfully 🚀
+</div>
+
+<script src="{{ url_for('static',
+filename='reel-hook-ai.js') }}"></script>
+
+{% endblock %}

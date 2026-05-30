@@ -112,6 +112,16 @@ def instagram_caption_ai():
     return render_template('instagram-caption-ai.html')
 
 # ======================================
+# REEL HOOK AI PAGE
+# ======================================
+
+@app.route('/reel-hook-ai')
+def reel_hook_ai():
+    return render_template(
+        'reel-hook-ai.html'
+    )
+
+# ======================================
 # EMAIL WRITER API
 # ======================================
 
@@ -160,6 +170,11 @@ def generate_email():
         )
 
         result = response.json()
+
+        print(result)
+
+        if 'choices' not in result:
+            return jsonify({"email": f"API Error: {result}"})
 
         email_text = result['choices'][0]['message']['content']
 
@@ -571,6 +586,67 @@ def generate_caption():
         return jsonify({
             "success": True,
             "captions": response.text
+        })
+
+    except Exception as e:
+
+        return jsonify({
+            "success": False,
+            "message": str(e)
+        })
+
+
+# ======================================
+# REEL HOOK GENERATOR API
+# ======================================
+@app.route('/generate-reel-hooks', methods=['POST'])
+def generate_reel_hooks():
+
+    try:
+
+        data = request.get_json()
+
+        niche = data.get('niche')
+
+        if not niche:
+
+            return jsonify({
+                "success": False,
+                "message": "Please enter a niche/topic"
+            })
+
+        prompt = f"""
+
+        You are a viral Instagram Reel hook creator.
+
+        Generate 10 highly engaging,
+        scroll-stopping reel hooks.
+
+        Niche:
+        {niche}
+
+        Requirements:
+
+        - Hooks must be short
+        - Highly attention grabbing
+        - Optimized for Instagram reels
+        - Use creator psychology
+        - Curiosity driven
+        - Human written tone
+        - Modern social media style
+        - Each hook should be unique
+        - Add emojis where needed
+        - High Engagements
+
+        """
+
+        response = model.generate_content(
+            prompt
+        )
+
+        return jsonify({
+            "success": True,
+            "hooks": response.text
         })
 
     except Exception as e:
